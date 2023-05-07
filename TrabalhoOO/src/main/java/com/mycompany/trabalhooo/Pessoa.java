@@ -114,7 +114,7 @@ public class Pessoa {
             System.out.println("Insira um sexo válido.");
             while(validarsexo(sexo) != true){
                 System.out.println("Insira um sexo válido (m) para masculino e (f) para feminino.");
-                sexo = ler.next().charAt(0);
+                sexo = ler.nextLine().charAt(0);
             }
             this.sexo=sexo;
         }
@@ -131,7 +131,6 @@ public class Pessoa {
             }
             this.data=data;
         }
-        
         
     }
     
