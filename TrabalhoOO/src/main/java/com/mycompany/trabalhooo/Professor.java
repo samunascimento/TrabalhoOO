@@ -4,6 +4,8 @@
  */
 package com.mycompany.trabalhooo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Samuel
@@ -11,6 +13,7 @@ package com.mycompany.trabalhooo;
 public class Professor extends Pessoa {
     
     private String modalidade;
+    private ArrayList<Aula> aulas = new ArrayList<Aula>();
 
     public Professor(String modalidade, String nome, String cpf, String telefone, String email, char sexo, String senha, String data) {
         super(nome, cpf, telefone, email, sexo, senha, data);
@@ -18,16 +21,32 @@ public class Professor extends Pessoa {
     }
 
     public String getModalidade() {
-        return modalidade;
+        return this.modalidade;
     }
     
     // metodo para marcar aula -- por enquanto esta retornando a aula
-    public Aula marcarAula(String nome, String modalidade, String data, String horario){
+    public void marcarAula(String nome, String modalidade, String data, String horario){
         
         // recebe os dados da pagina 
         
         Aula novaAula = new Aula(nome, data, horario, modalidade);
-        return novaAula;
+        this.aulas.add(novaAula);
+    }
+    
+    public void printAulas(){
+        
+        if(!this.aulas.isEmpty()){
+            
+            System.out.println("Aulas do professor " + this.getNome() + "\n");
+            
+            for(Aula aula : this.aulas){
+
+               aula.print();
+
+            }
+        }else{
+            System.out.println("Esse professor ainda não tem aulas cadastradas.");
+        }
     }
 
     @Override

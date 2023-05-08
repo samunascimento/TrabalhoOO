@@ -11,29 +11,42 @@ import java.util.*;
  * @author Gerenciador
  */
 public class TrabalhoOO {
-
+    
+    public void inteface(){
+        
+        System.out.println("FitZone");
+        System.out.println("Digite o número correspondente ao que deseja fazer:");
+        System.out.println("""
+                           1-Cadastrar um professor.
+                           2-Cadastrar um aluno.
+                           3-Logar como um aluno.
+                           4-Logar como um professor.
+                           5-Ver todas as aulas.
+                           6-Entrar em uma aula.
+                           7-Cadastrar uma aula.
+                           8-Ver minhas aulas.
+                           9-Ver meus alunos em certa aula.""");
+        
+    }    
+    
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        Pessoa pessoa1 = new Pessoa("Allan Chang", "10559126654", "32991456644", "allan.jf@yahoo.com"
-        ,'m',"allan123","03/10/2002");
-        
-        /* Pessoa pessoa2 = new Pessoa("Allan1 Chang", "105591266545", "329914566446", "allan.jfyahoo.com"
-        ,'j',"allan123","03102002"); */ 
-        
+        Aluno pessoa1 = new Aluno("Allan Chang", "10559126654", "32991456644", "allan.jf@yahoo.com"
+        ,'m',"allan123","03/10/2002", 64, 1.71);
+       
         pessoa1.print();
         
-        //pessoa2.printPessoa();
-        
-        System.out.println("");
-
         Professor professor1 = new Professor("Boxe","Allan Chang", "10559126654", "32991456644", "allan.jf@yahoo.com"
         ,'m',"allan123","03/10/2002");
 
         professor1.print();
-
-        Aula aula1 = professor1.marcarAula("Aula de Boxe", "Boxe", "Terça e Quinta", "10:30");
-
-        aula1.print();
+        
+        professor1.marcarAula("Aula de Boxe", "Boxe", "Terça e Quinta", "10:30");
+        
+        professor1.marcarAula("Aula de Boxe", "Boxe", "Segunda e Quarta", "12:00");
+        
+        
+        professor1.printAulas();
 
     }   
 }
