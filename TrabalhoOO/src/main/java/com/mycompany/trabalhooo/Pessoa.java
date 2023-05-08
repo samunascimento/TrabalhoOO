@@ -165,7 +165,7 @@ public class Pessoa {
     
     
     
-    public void printPessoa(){
+    public void print(){
         System.out.println("Nome: " + this.nome + "\n"
                            +"CPF: " + this.cpf + "\n"
                            +"Telefone: " + this.telefone + "\n"
