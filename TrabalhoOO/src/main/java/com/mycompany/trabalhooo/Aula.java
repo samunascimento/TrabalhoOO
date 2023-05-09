@@ -4,6 +4,8 @@
  */
 package com.mycompany.trabalhooo;
 
+import java.util.ArrayList;
+
 
 /**
  *
@@ -15,6 +17,7 @@ public class Aula {
     private final String modalidade;
     private String data;  
     private String horario;
+    private static ArrayList<Aula> aulas = new ArrayList <Aula>();
    
     public Aula(String nome, String data, String horario, String modalidade) {
         this.nome = nome;
@@ -24,6 +27,8 @@ public class Aula {
 
         this.data = data; 
         this.horario = horario;
+        
+        this.aulas.add(this);
         
     }
 
