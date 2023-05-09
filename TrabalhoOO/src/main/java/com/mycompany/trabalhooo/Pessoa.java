@@ -13,6 +13,8 @@ import java.util.regex.Pattern;
  * @author Gerenciador
  */
 public class Pessoa {
+
+
     private String nome;
     private String cpf;
     private String telefone;
@@ -164,6 +166,13 @@ public class Pessoa {
     }
     
     
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
     
     public void print(){
         System.out.println("Nome: " + this.nome + "\n"
