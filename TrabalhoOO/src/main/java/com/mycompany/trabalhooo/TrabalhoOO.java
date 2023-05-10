@@ -7,7 +7,9 @@ import java.util.*;
 
 /**
  *
- * @author Gerenciador
+ * @author Samuel Nascimento - Matrícula: 202165137AC
+ *         Tamirys Visoná- Matrícula: 201865520B
+ *         Allan Chang - Matrícula: 202135001
  */
 public class TrabalhoOO {
 

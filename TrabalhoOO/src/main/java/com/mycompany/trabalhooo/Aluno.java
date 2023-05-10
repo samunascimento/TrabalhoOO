@@ -8,7 +8,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Samuel
+ * @author Samuel Nascimento - Matrícula: 202165137AC
+ *         Tamirys Visoná- Matrícula: 201865520B
+ *         Allan Chang - Matrícula: 202135001
  */
 public class Aluno extends Pessoa {
     
