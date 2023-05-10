@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
  *         Samuel Nascimento - Matrícula: 202165137AC
  *         Tamirys Visoná- Matrícula: 201865520B
  *         Allan Chang - Matrícula: 202135001
+ *         Iago Mazzoni Matrícula - 202065568C
  */
 public abstract class Pessoa {
 
