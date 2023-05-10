@@ -16,17 +16,18 @@ public class TrabalhoOO {
         System.out.println("FitZone");
         System.out.println("Digite o número correspondente ao que deseja fazer:");
         System.out.println("""
-                           1-Cadastrar um professor.
-                           2-Cadastrar um aluno.
-                           3-Logar como um aluno.
-                           4-Logar como um professor.
+                           1-Logar como um aluno.
+                           2-Logar como um professor.
+                           3-Logar como Admin.
                            0-Sair.""");
+        //1-Cadastrar um professor.
+        //2-Cadastrar um aluno.
         Scanner teclado = new Scanner(System.in);
         int opc = teclado.nextInt();
         return opc;
     }
 
-    public static int intefaceAluno() {
+    public static int intefaceAluno(Aluno aluno) {
 
         System.out.println("FitZone");
         System.out.println("Digite o número correspondente ao que deseja fazer:");
@@ -38,28 +39,47 @@ public class TrabalhoOO {
         Scanner teclado = new Scanner(System.in);
         int opc = teclado.nextInt();
         while (opc != 0) {
-            if (opc > 3 && opc < 0) {
+            if (opc > 3 || opc < 0) {
                 System.out.println("Entrada invalida!");
-                opc = intefaceAluno();
+                opc = intefaceAluno(aluno);
             } else {
                 switch (opc) {
-                    case 1://ver aulas
-                        //sera implementado
-                        break;
-                    case 2://entra em aula
-                        //sera implementado
-                        break;
-                    case 3://ver minhas aulas                                         
-                        break;
+                    case 1 -> {
+                        //ver aulas
+                        Aula.printTodasAulas();
+                        System.out.println("Digite qualquer tecla para voltar: ");
+                        int aux2Opc = teclado.nextInt();
+                        opc = intefaceAluno(aluno);
+                    }
+                    case 2 -> {
+                        //entra em aula
+                        String aux = teclado.nextLine();
+                        System.out.println("Escolha uma Aula: ");
+                        ArrayList<Aula> aulas = Aula.getAulas();
+                        for (int i = 0; i < aulas.size(); i++) {
+                            System.out.println(aulas.get(i).getNome() + " : " + i);
+                        }
+                        int modal = teclado.nextInt();
+                        System.out.println("");
+                        aluno.entrarAula(aulas.get(modal));
+                        System.out.println("Digite qualquer tecla para voltar: ");
+                        int aux2Opc = teclado.nextInt();
+                        opc = intefaceAluno(aluno);
+                    }
+                    case 3 -> {
+                        //ver minhas aulas
+                        aluno.printAulas();
+                        System.out.println("Digite qualquer tecla para voltar: ");
+                        int aux2Opc = teclado.nextInt();
+                        opc = intefaceAluno(aluno);
+                    }
                 }
             }
-            opc = intefaceAluno();
         }
-        System.out.println("Saindo!!");
         return opc;
     }
 
-    public static int intefaceProfessor() {
+    public static int intefaceProfessor(Professor professor) {
 
         System.out.println("FitZone");
         System.out.println("Digite o número correspondente ao que deseja fazer:");
@@ -67,93 +87,184 @@ public class TrabalhoOO {
                            1-Ver todas as aulas.
                            2-Cadastrar uma aula.
                            3-Ver minhas aulas.
-                           4-Ver meus alunos em certa aula.
                            0-Sair.""");
+        //4-Ver meus alunos em certa aula.
+
         Scanner teclado = new Scanner(System.in);
         int opc = teclado.nextInt();
         while (opc != 0) {
-            if (opc > 3 && opc < 0) {
-                System.out.println("Entrada invalida!");
-                opc = intefaceProfessor();
-            } else {
-                switch (opc) {
-                    case 1://ver todas aulas
-                        //sera implementado
-                        break;
-                    case 2://cadastrar uma aula
-                        //sera implementado
-                        break;
-                    case 3://ver minhas aulas
-                           //sera implementado 
-                        break;
-                    case 4://ver meus alunos em certa aula
-                           //sera implementado
-                        break;    
+
+            switch (opc) {
+                case 1 -> {
+                    //ver todas aulas
+                    Aula.printTodasAulas();
+                    System.out.println("Digite qualquer tecla para voltar: ");
+                    int aux2Opc = teclado.nextInt();
+                    opc = intefaceProfessor(professor);
+                }
+                case 2 -> {
+                    //cadastrar uma aula
+                    String aux = teclado.nextLine();
+                    System.out.print("Nome: ");
+                    String nomeAula = teclado.nextLine();
+                    System.out.println("");
+                    System.out.print("Dias: ");
+                    String dataAula = teclado.nextLine();
+                    System.out.println("");
+                    System.out.print("Horário: ");
+                    String horarioAula = teclado.nextLine();
+                    System.out.println("");
+                    System.out.println("Escolha uma Modalidade: ");
+                    ArrayList<Modalidade> modalidades = Modalidade.getModalidades();
+                    for (int i = 0; i < modalidades.size(); i++) {
+                        System.out.println(modalidades.get(i).getNome() + " : " + i);
+                    }
+                    int modal = teclado.nextInt();
+                    System.out.println("");
+                    professor.marcarAula(nomeAula, modalidades.get(modal), dataAula, horarioAula);
+                    System.out.println("Digite qualquer tecla para voltar: ");
+                    int aux2Opc = teclado.nextInt();
+                    opc = intefaceProfessor(professor);
+                }
+
+                case 3 -> {//ver minhas aulas
+                    professor.printAulas();
+                    System.out.println("Digite qualquer tecla para voltar: ");
+                    int aux2Opc = teclado.nextInt();
+                    opc = intefaceProfessor(professor);
+                }
+                default -> {
+                    System.out.println("Entrada invalida!");
+                    opc = intefaceProfessor(professor);
                 }
             }
-            opc = intefaceProfessor();
         }
-        System.out.println("Saindo!!");
+
+        return opc;
+    }
+
+    public static int intefaceAdmin() {
+
+        System.out.println("FitZone");
+        System.out.println("Digite o número correspondente ao que deseja fazer:");
+        System.out.println("""
+                           1-Ver todas as modalidades.
+                           2-Cadastrar uma modalidade.
+                           0-Sair.""");
+        Scanner teclado = new Scanner(System.in);
+        int opc = teclado.nextInt();
+        String aux = "";
+        while (opc != 0) {
+
+            switch (opc) {
+                case 1 -> {
+                    //ver todas modalidades
+                    Modalidade.printModalidades();
+                    System.out.println("Digite qualquer tecla para voltar: ");
+                    int auxOpc = teclado.nextInt();
+                    opc = intefaceAdmin();
+                }
+
+                case 2 -> {
+                    //cadastrar uma modalidade
+                    aux = teclado.nextLine();
+                    System.out.print("Nome da modalidade: ");
+                    String nomeModalidade = teclado.nextLine();
+                    if (!"".equals(nomeModalidade)) {
+                        Admin.cadastrarModalidade(nomeModalidade);
+                        System.out.println("Modalidade criada");
+                    }
+                    System.out.println("Digite qualquer tecla para voltar: ");
+                    int aux2Opc = teclado.nextInt();
+                    opc = intefaceAdmin();
+                }
+                default -> {
+                    System.out.println("Entrada invalida!");
+                    opc = intefaceAdmin();
+                }
+            }
+        }
         return opc;
     }
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        Aluno pessoa1 = new Aluno("Allan Chang", "10559126654", "32991456644", "allan.jf@yahoo.com",
-                'm', "allan123", "03/10/2002", 64, 1.71);
+        Aluno aluno1 = new Aluno("Allan Chang", "10559126654", "32991456644",
+                "aluno@yahoo.com",
+                'm', "aluno", "03/10/2002", 64, 1.71);
 
-        pessoa1.print();
+        //aluno1.print();
+        Admin admin1 = new Admin();
 
-        Professor professor1 = new Professor("Boxe", "Allan Chang", "10559126654", "32991456644", "allan.jf@yahoo.com",
-                'm', "allan123", "03/10/2002");
+        Modalidade boxe = new Modalidade("Boxe");
+        Modalidade.addModalidade(boxe);
 
-        professor1.print();
+        Modalidade danca = new Modalidade("Dança");
+        Modalidade.addModalidade(danca);
+        //boxe.print();
 
-        professor1.marcarAula("Aula de Boxe", "Boxe", "Terça e Quinta", "10:30");
+        Professor professor1 = new Professor(boxe, "Allan Chang", "10559126654", "32991456644",
+                "professor@yahoo.com",
+                'm', "professor", "03/10/2002");
 
-        professor1.marcarAula("Aula de Boxe", "Boxe", "Segunda e Quarta", "12:00");
+        //professor1.print();
+        professor1.marcarAula("Aula de Boxe", boxe, "Terça e Quinta", "10:30");
 
-        professor1.printAulas();
+        professor1.marcarAula("Aula de Boxe", boxe, "Segunda e Quarta", "12:00");
 
+        //professor1.printAulas();
         int opc = inteface();
         Scanner teclado = new Scanner(System.in);
         String senha = "";
         String login = "";
-        
+
         while (opc != 0) {
-            if (opc > 4 && opc < 0) {
+            if (opc > 3 || opc < 0) {
                 System.out.println("Entrada invalida!");
                 opc = inteface();
             } else {
                 switch (opc) {
-                    case 1://cadastrar prof
-                        //sera implementado
-                        break;
-                    case 2://cadastrar aluno
-                        //sera implementado
-                        break;
-                    case 3://logar aluno
+                    // case 1://cadastrar prof
+                    //sera implementado
+                    //     break;
+                    // case 2://cadastrar aluno
+                    //sera implementado
+                    //     break;
+                    case 1://logar aluno
                         System.out.print("Login : ");
                         login = teclado.nextLine();
                         System.out.println("");
                         System.out.print("Senha : ");
                         senha = teclado.nextLine();
-                        if (login.equals(pessoa1.getCPF()) && senha.equals(pessoa1.getSenha())) {
+                        if (login.equals(aluno1.getEmail()) && senha.equals(aluno1.getSenha())) {
                             System.out.println("Login efetuado com sucesso!");
-                            intefaceAluno();
+                            intefaceAluno(aluno1);
                         } else {
                             System.out.println("Login ou Senha incorretos!");
                         }
                         break;
-                    case 4:// logar prof
+                    case 2:// logar prof
                         System.out.print("Login : ");
                         login = teclado.nextLine();
                         System.out.println("");
                         System.out.print("Senha : ");
                         senha = teclado.nextLine();
-                        if (login.equals(professor1.getCPF()) && senha.equals(professor1.getSenha())) {
+                        if (login.equals(professor1.getEmail()) && senha.equals(professor1.getSenha())) {
                             System.out.println("Login efetuado com sucesso!");
-                            intefaceProfessor();
+                            intefaceProfessor(professor1);
+                        } else {
+                            System.out.println("Login ou Senha incorretos!");
+                        }
+                        break;
+                    case 3://logar admin
+                        System.out.print("Login : ");
+                        login = teclado.nextLine();
+                        System.out.println("");
+                        System.out.print("Senha : ");
+                        senha = teclado.nextLine();
+                        if (login.equals(admin1.getLogin()) && senha.equals(admin1.getSenha())) {
+                            System.out.println("Login efetuado com sucesso!");
+                            intefaceAdmin();
                         } else {
                             System.out.println("Login ou Senha incorretos!");
                         }

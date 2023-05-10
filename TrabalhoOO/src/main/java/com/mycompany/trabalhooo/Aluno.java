@@ -15,7 +15,7 @@ public class Aluno extends Pessoa {
     public double peso;
     public double altura;
     private double imc;
-    private ArrayList<Aula> participaAula = new ArrayList<Aula>();
+    private ArrayList<Aula> participaAula = new ArrayList<>();
     
     public Aluno(String nome, String cpf, String telefone, String email, char sexo, String senha, String data, double peso, double altura) {
         super(nome, cpf, telefone, email, sexo, senha, data);
@@ -63,11 +63,18 @@ public class Aluno extends Pessoa {
         
     }
     
-    public void entrarAula(){
-        
-        System.out.println("Escolha sua modalidade:");
-        
-        
+    public void entrarAula(Aula aula){
+        aula.entrarAula(this);
+        participaAula.add(aula);
+    }
+
+    public ArrayList<Aula> getParticipaAula() {
+        return participaAula;
     }
     
+    public void printAulas(){
+        for (Aula aula : participaAula) {
+            aula.print();
+        }
+    }
 }

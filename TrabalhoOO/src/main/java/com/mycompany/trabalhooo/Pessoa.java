@@ -12,17 +12,19 @@ import java.util.regex.Pattern;
  *
  * @author Gerenciador
  */
-public class Pessoa {
+public abstract class Pessoa {
 
 
-    private String nome;
-    private String cpf;
+    private final String nome;
+    private final String cpf;
     private String telefone;
     private String email;
-    private char sexo;
+    private final char sexo;
     private String senha;
-    private String data;
+    private final String data;
     
+    public abstract void print();
+     
     private static boolean validarNome (String nomeCompleto) {
     // Cria um padrão de expressão regular que define o padrão de pesquisa
     Pattern padrao = Pattern.compile("^[A-Za-z\\s]+$");
@@ -173,14 +175,13 @@ public class Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    public void print(){
-        System.out.println("Nome: " + this.nome + "\n"
-                           +"CPF: " + this.cpf + "\n"
-                           +"Telefone: " + this.telefone + "\n"
-                           +"Email: " + this.email + "\n"
-                           +"Sexo: " + this.getSexo() + "\n"
-                           +"Data de nascimento: "+ this.data);
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
-    
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

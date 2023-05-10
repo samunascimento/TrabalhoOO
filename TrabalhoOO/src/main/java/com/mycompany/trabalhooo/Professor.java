@@ -12,41 +12,44 @@ import java.util.ArrayList;
  */
 public class Professor extends Pessoa {
     
-    private String modalidade;
-    private ArrayList<Aula> aulas = new ArrayList<Aula>();
+    private final Modalidade modalidade;
+    private ArrayList<Aula> aulas = new ArrayList<>();
 
-    public Professor(String modalidade, String nome, String cpf, String telefone, String email, char sexo, String senha, String data) {
+    
+    private void addProfessor(Modalidade modalidade) {
+        modalidade.adicionarProfessor(this);
+    }
+    
+    public Professor(Modalidade modalidade, String nome, String cpf, String telefone, String email, char sexo, String senha, String data) {
         super(nome, cpf, telefone, email, sexo, senha, data);
         this.modalidade = modalidade;
+        this.addProfessor(modalidade);
     }
 
-    public String getModalidade() {
+    public Modalidade getModalidade() {
         return this.modalidade;
     }
     
-    // metodo para marcar aula -- por enquanto esta retornando a aula
-    public void marcarAula(String nome, String modalidade, String data, String horario){
-        
+    // metodo para marcar aula 
+    public void marcarAula(String nome, Modalidade modalidade, String data, String horario){
         // recebe os dados da pagina 
-        
-        Aula novaAula = new Aula(nome, data, horario, modalidade);
+        Aula novaAula = new Aula(nome, data, horario, modalidade, this);
         this.aulas.add(novaAula);
+        Aula.addAula(novaAula);
     }
     
     public void printAulas(){
         
-        if(!this.aulas.isEmpty()){
+
             
             System.out.println("Aulas do professor " + this.getNome() + "\n");
-            
+           
             for(Aula aula : this.aulas){
 
                aula.print();
 
             }
-        }else{
-            System.out.println("Esse professor ainda não tem aulas cadastradas.");
-        }
+
     }
 
     @Override
@@ -57,6 +60,6 @@ public class Professor extends Pessoa {
                            +"Email: " + this.getEmail() + "\n"
                            +"Sexo: " + this.getSexo() + "\n"
                            +"Data de nascimento: "+ this.getData() + "\n"
-                           +"Modalidade: "+ this.modalidade + "\n");
+                           +"Modalidade: "+ this.modalidade.getNome() + "\n");
     }
 }
