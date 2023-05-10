@@ -9,7 +9,7 @@ package com.mycompany.trabalhooo;
  * @author Samuel Nascimento - Matrícula: 202165137AC
  *         Tamirys Visoná- Matrícula: 201865520B
  *         Allan Chang - Matrícula: 202135001
- *         Iago Mazzoni Matrícula - 202065568C
+ *         Iago Mazzoni - Matrícula: 202065568C
  */
 public class Admin {
     private String login = "admin";
