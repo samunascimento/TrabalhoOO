@@ -98,7 +98,9 @@ public class TelaLogin {
 
         for (Aluno aluno : listaAlunos) {
             if (aluno.getEmail().equals(email) && aluno.getSenha().equals(senha)) {
-                JOptionPane.showMessageDialog(tela, "Login bem-sucedido!");
+                TelaPosLogin telaPrincipal = new TelaPosLogin();
+                telaPrincipal.exibir();
+                tela.dispose();
                 return;
             }
         }
