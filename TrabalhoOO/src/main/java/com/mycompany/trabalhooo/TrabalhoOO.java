@@ -192,6 +192,10 @@ public class TrabalhoOO {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+        
+        TelaInicial tela = new TelaInicial();
+        tela.exibir();
+        
         Aluno aluno1 = new Aluno("Allan Chang", "10559126654", "32991456644",
                 "aluno@yahoo.com",
                 'm', "aluno", "03/10/2002", 64, 1.71);

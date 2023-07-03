@@ -23,7 +23,7 @@ public class Aluno extends Pessoa {
     public Aluno(String nome, String cpf, String telefone, String email, char sexo, String senha, String data, double peso, double altura) {
         super(nome, cpf, telefone, email, sexo, senha, data);
         this.peso = peso;
-        this.altura = altura;
+        this.altura = altura/100;
         this.imc =(this.peso/(this.altura*this.altura));
     }
     

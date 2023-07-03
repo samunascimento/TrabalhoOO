@@ -1,0 +1,41 @@
+[
+  {
+    "peso": 50.0,
+    "altura": 1.5,
+    "imc": 22.22222222222222,
+    "participaAula": [],
+    "nome": "Leticia",
+    "cpf": "105.591.265-54",
+    "telefone": "32991009405",
+    "email": "leticia@gmail.com",
+    "sexo": "F",
+    "senha": "123",
+    "data": "18/09/2003"
+  },
+  {
+    "peso": 64.0,
+    "altura": 1.71,
+    "imc": 21.887076365377382,
+    "participaAula": [],
+    "nome": "Allan",
+    "cpf": "105.591.266-54",
+    "telefone": "32991456644",
+    "email": "allan.jf@yahoo.com",
+    "sexo": "M",
+    "senha": "123",
+    "data": "03/10/2002"
+  },
+  {
+    "peso": 70.0,
+    "altura": 1.7,
+    "imc": 24.221453287197235,
+    "participaAula": [],
+    "nome": "Iago",
+    "cpf": "105.698.512-35",
+    "telefone": "32999880100",
+    "email": "iago@gmail.com",
+    "sexo": "M",
+    "senha": "123",
+    "data": "03/12/2001"
+  }
+]

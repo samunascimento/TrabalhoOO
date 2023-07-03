@@ -82,16 +82,16 @@ public abstract class Pessoa {
             this.nome = nome;
         }
         
-        if(validarnum(cpf)){
+//        if(validarnum(cpf)){
             this.cpf = cpf;
-        }else{
-            System.out.println("CPF inválido.");
-            while(validarnum(cpf) != true){
-                System.out.println("Insira um nome CPF, composto apenas por 11 números.");
-                cpf = ler.nextLine();
-            }
-            this.cpf = cpf;
-        }
+//        }else{
+//            System.out.println("CPF inválido.");
+//            while(validarnum(cpf) != true){
+//                System.out.println("Insira um nome CPF, composto apenas por 11 números.");
+//                cpf = ler.nextLine();
+//            }
+//            this.cpf = cpf;
+//        }
         
         if(validarnum(telefone)){
             this.telefone = telefone;
