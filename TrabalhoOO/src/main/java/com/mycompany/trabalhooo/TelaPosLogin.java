@@ -16,8 +16,12 @@ public class TelaPosLogin {
 private JFrame tela;
     private final int WIDTH = 400;
     private final int HEIGHT = 300;
+    private Aluno aluno;
 
-    public void exibir() {
+    public void exibir(Aluno aluno1) {
+        
+        this.aluno = aluno1;
+        
         tela = new JFrame("FitZone");
         tela.setSize(WIDTH, HEIGHT);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

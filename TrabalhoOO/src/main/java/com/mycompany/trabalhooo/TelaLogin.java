@@ -99,7 +99,7 @@ public class TelaLogin {
         for (Aluno aluno : listaAlunos) {
             if (aluno.getEmail().equals(email) && aluno.getSenha().equals(senha)) {
                 TelaPosLogin telaPrincipal = new TelaPosLogin();
-                telaPrincipal.exibir();
+                telaPrincipal.exibir(aluno);
                 tela.dispose();
                 return;
             }
