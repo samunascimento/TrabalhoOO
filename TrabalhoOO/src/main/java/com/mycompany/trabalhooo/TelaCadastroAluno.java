@@ -79,7 +79,7 @@ public class TelaCadastroAluno {
         tfAltura = new JTextField(20);
 
         JButton btnCadastrar = new JButton("Cadastrar");
-        btnCadastrar.addActionListener(e -> cadastrarAluno());
+        btnCadastrar.addActionListener(new CadastrarAluno(this));
 
         painelFormulario.add(lblNome);
         painelFormulario.add(tfNome);
@@ -118,7 +118,7 @@ public class TelaCadastroAluno {
         tela.setVisible(true);
     }
 
-    private void cadastrarAluno() {
+    public void cadastrarAluno() {
     String nome = tfNome.getText();
     String email = tfEmail.getText();
     String telefone = tfTelefone.getText();

@@ -37,5 +37,31 @@
     "sexo": "M",
     "senha": "123",
     "data": "03/12/2001"
+  },
+  {
+    "peso": 80.0,
+    "altura": 1.7,
+    "imc": 27.68166089965398,
+    "participaAula": [],
+    "nome": "Samuel",
+    "cpf": "123.456.789-58",
+    "telefone": "12345678985",
+    "email": "samuel@email.com",
+    "sexo": "M",
+    "senha": "ADMIN",
+    "data": "12/12/1999"
+  },
+  {
+    "peso": 80.0,
+    "altura": 1.5,
+    "imc": 35.55555555555556,
+    "participaAula": [],
+    "nome": "teste",
+    "cpf": "789.456.123-53",
+    "telefone": "12345678985",
+    "email": "teste@email.com",
+    "sexo": "M",
+    "senha": "admin",
+    "data": "14/12/1999"
   }
 ]
