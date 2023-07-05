@@ -93,8 +93,16 @@ public class TelaLogin {
     private void fazerLogin() {
         String email = tfEmail.getText();
         String senha = new String(pfSenha.getPassword());
+        String admin = "admin";
 
         List<Aluno> listaAlunos = lerAlunosDoArquivo();
+        
+        if(email.equals(admin) && senha.equals(admin)){
+            TelaAdmin telaAdmin = new TelaAdmin();
+            telaAdmin.exibir();
+            tela.dispose();
+            return;
+        }
 
         for (Aluno aluno : listaAlunos) {
             if (aluno.getEmail().equals(email) && aluno.getSenha().equals(senha)) {

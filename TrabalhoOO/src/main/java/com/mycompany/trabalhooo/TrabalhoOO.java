@@ -210,14 +210,14 @@ public class TrabalhoOO {
         Modalidade.addModalidade(danca);
         //boxe.print();
 
-        Professor professor1 = new Professor(boxe, "Allan Chang", "10559126654", "32991456644",
-                "professor@yahoo.com",
-                'm', "professor", "03/10/2002");
-
-        //professor1.print();
-        professor1.marcarAula("Aula de Boxe", boxe, "Terça e Quinta", "10:30");
-
-        professor1.marcarAula("Aula de Boxe", boxe, "Segunda e Quarta", "12:00");
+//        Professor professor1 = new Professor(boxe, "Allan Chang", "10559126654", "32991456644",
+//                "professor@yahoo.com",
+//                'm', "professor", "03/10/2002");
+//
+//        //professor1.print();
+//        professor1.marcarAula("Aula de Boxe", boxe, "Terça e Quinta", "10:30");
+//
+//        professor1.marcarAula("Aula de Boxe", boxe, "Segunda e Quarta", "12:00");
 
         //professor1.printAulas();
         int opc = inteface();
@@ -256,13 +256,13 @@ public class TrabalhoOO {
                         System.out.println("");
                         System.out.print("Senha : ");
                         senha = teclado.nextLine();
-                        if (login.equals(professor1.getEmail()) && senha.equals(professor1.getSenha())) {
-                            System.out.println("Login efetuado com sucesso!");
-                            intefaceProfessor(professor1);
-                        } else {
-                            System.out.println("Login ou Senha incorretos!");
-                        }
-                        break;
+//                        if (login.equals(professor1.getEmail()) && senha.equals(professor1.getSenha())) {
+//                            System.out.println("Login efetuado com sucesso!");
+//                            intefaceProfessor(professor1);
+//                        } else {
+//                            System.out.println("Login ou Senha incorretos!");
+//                        }
+//                        break;
                     case 3://logar admin
                         System.out.print("Login : ");
                         login = teclado.nextLine();
