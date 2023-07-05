@@ -59,11 +59,15 @@ private JFrame tela;
     }
 
     private void abrirPerfil() {
-        JOptionPane.showMessageDialog(tela, "Abrir página de perfil");
+        TelaPerfil telaPerfil = new TelaPerfil();
+        telaPerfil.exibir(aluno);
+        tela.dispose();
     }
 
     private void abrirVisualizarIMC() {
-        JOptionPane.showMessageDialog(tela, "Abrir página de visualização de IMC");
+        TelaIMC telaIMC = new TelaIMC();
+        telaIMC.exibir(aluno);
+        tela.dispose();
     }
 
     private void abrirVisualizarAulas() {
