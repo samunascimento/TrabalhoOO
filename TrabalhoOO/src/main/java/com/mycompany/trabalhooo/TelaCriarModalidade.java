@@ -30,6 +30,7 @@ public class TelaCriarModalidade {
 
     public void exibir() {
         tela = new JFrame("Criar Modalidade");
+        tela.setLocationRelativeTo(null);
         tela.setSize(WIDTH, HEIGHT);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());

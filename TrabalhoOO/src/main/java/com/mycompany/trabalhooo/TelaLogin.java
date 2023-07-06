@@ -36,6 +36,7 @@ public class TelaLogin {
     public void exibir() {
         tela = new JFrame("Login");
         tela.setSize(WIDTH, HEIGHT);
+        tela.setLocationRelativeTo(null);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());
 

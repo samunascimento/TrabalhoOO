@@ -31,6 +31,7 @@ public class TelaPerfil {
         this.aluno = aluno;
 
         tela = new JFrame("Perfil");
+        tela.setLocationRelativeTo(null);
         tela.setSize(WIDTH, HEIGHT);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());

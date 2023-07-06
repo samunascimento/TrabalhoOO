@@ -19,6 +19,7 @@ public class TelaAdmin {
 
     public void exibir() {
         tela = new JFrame("Admin");
+        tela.setLocationRelativeTo(null);
         tela.setSize(WIDTH, HEIGHT);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());

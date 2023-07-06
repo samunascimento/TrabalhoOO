@@ -20,9 +20,11 @@ public class TelaInicial {
 
     public void exibir() {
         tela = new JFrame("FitZone - Tela Inicial");
+        tela.setLocationRelativeTo(null);
         tela.setSize(WIDTH, HEIGHT);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());
+        tela.setLocationRelativeTo(null);
 
         JLabel tituloLabel = new JLabel("Bem-vindo à ");
         tituloLabel.setFont(new Font("Arial", Font.BOLD, 20));

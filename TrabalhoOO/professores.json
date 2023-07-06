@@ -9,5 +9,16 @@
     "sexo": "M",
     "senha": "123",
     "data": "03/10/2002"
+  },
+  {
+    "modalidade": "Jiu jitsu",
+    "aulas": [],
+    "nome": "asdasd",
+    "cpf": "656.546.516-51",
+    "telefone": "12345678987",
+    "email": "asd@gmail.com",
+    "sexo": "M",
+    "senha": "1234",
+    "data": "12/12/1999"
   }
 ]
