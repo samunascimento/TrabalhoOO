@@ -37,8 +37,9 @@ public class TelaCadastroProfessor {
 
     public void exibir() {
         tela = new JFrame("Cadastro de Professor");
-        tela.setLocationRelativeTo(null);
+        
         tela.setSize(WIDTH, HEIGHT);
+        tela.setLocationRelativeTo(null);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());
 

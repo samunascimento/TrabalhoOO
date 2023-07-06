@@ -44,8 +44,9 @@ public class TelaCadastroAluno {
 
     public void exibir() {
         tela = new JFrame("Cadastro de Aluno");
-        tela.setLocationRelativeTo(null);
+        
         tela.setSize(WIDTH, HEIGHT);
+        tela.setLocationRelativeTo(null);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());
 

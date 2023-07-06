@@ -20,8 +20,8 @@ public class TelaInicial {
 
     public void exibir() {
         tela = new JFrame("FitZone - Tela Inicial");
-        tela.setLocationRelativeTo(null);
         tela.setSize(WIDTH, HEIGHT);
+        tela.setLocationRelativeTo(null);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tela.setLayout(new BorderLayout());
         tela.setLocationRelativeTo(null);
