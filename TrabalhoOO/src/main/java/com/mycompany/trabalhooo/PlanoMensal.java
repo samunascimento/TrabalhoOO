@@ -8,13 +8,11 @@ package com.mycompany.trabalhooo;
  *
  * @author Samuel
  */
-public abstract class Plano {
-    
-    private final double valor = 90;
+public class PlanoMensal extends Plano {
 
-    public double getValor() {
-        return valor;
+    @Override
+    public double pagamento() {
+        return super.getValor();
     }
-
-    public abstract double pagamento();
+    
 }
