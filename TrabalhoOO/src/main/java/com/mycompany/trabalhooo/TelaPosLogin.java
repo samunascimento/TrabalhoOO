@@ -76,7 +76,9 @@ private JFrame tela;
     }
 
     private void abrirPagarMensalidade() {
-        JOptionPane.showMessageDialog(tela, "Abrir página de pagamento de mensalidade");
+        TelaPagamento telaPagamento = new TelaPagamento();
+        telaPagamento.exibir();
+        tela.dispose();
     }
 
 }
